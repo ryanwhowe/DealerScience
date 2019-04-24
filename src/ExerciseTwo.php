@@ -15,7 +15,7 @@ namespace rhowe\Exercise;
  * other (e.g. ACG, GAC, GCA, and etc. ).
  * 
  * In two given DNA sequences find the largest possible sub-sequence that would be considered
- * akin.  Output the length of the akin sub-sequence and its position (0-based) in both intput
+ * akin.  Output the length of the akin sub-sequence and its position (0-based) in both input
  * sequences.
  * 
  */
@@ -65,7 +65,7 @@ class ExerciseTwo {
     /**
      * Strings can only be between 2 and 4 characters long, there are a very finite number of them
      * This is the algorythmic answer but given the limited output of possibilities I would tent 
-     * towards a more verbose, less clever and easier to maintain solition
+     * towards a more verbose, less clever and easier to maintain solution
      */
     public static function generateSubSequence(string $string): array {
         $min_len = 2;
@@ -98,7 +98,7 @@ class ExerciseTwo {
         //     $return[] = ['string' => substr($string, 1), 'position' => 1 ];
         //     $return[] = ['string' => substr($string, 1, -1), 'position' => 1 ];
 
-        //     $return[] = ['string' => substr($srting, 2), 'position' => 2];
+        //     $return[] = ['string' => substr($string, 2), 'position' => 2];
         // }
         // if(strlen($string) === 3){
         //     $return[] = ['string' => $string, 'position' => 0 ];

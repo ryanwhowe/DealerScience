@@ -14,7 +14,7 @@ final class ExerciseTwoTest extends TestCase
     public function exerciseCaseProvider()
     {
         return [
-            /* Input strings , length, position of string1, posotion of string2 */
+            /* Input strings , length, position of string1, position of string2 */
             [ ['ACGT', 'GTC'], [3,1,0]   ],
             [ ['ACGT', 'CAT'], [2,0,0]   ],
             [ ['ACA',  'AC'],  [2,0,0]   ],
@@ -24,13 +24,13 @@ final class ExerciseTwoTest extends TestCase
 
     /**
      * The example output does not show the output for may additional cases this
-     * is to test additional output to ensure all cases are coverd by method
+     * is to test additional output to ensure all cases are covered by method
      * 
      */
     public function personalCaseProvider()
     {
         return [
-            /* Input strings , length, position of string1, posotion of string2 */
+            /* Input strings , length, position of string1, position of string2 */
             [ ['ACGT', 'GT'],  [2,2,0]   ],
             [ ['ACGT', 'GAT'], [0,-1,-1] ],
             [ ['GCA',  'TCA'], [2,1,1]   ],
@@ -81,22 +81,21 @@ final class ExerciseTwoTest extends TestCase
     }
 
     /**
-     * Thest that the length portion of the output to ensure that the found lengths are correct 
+     * Test that the length portion of the output to ensure that the found lengths are correct 
      * for the expected results
      * 
      * @test
      * @dataProvider exerciseCaseProvider
      * @dataProvider personalCaseProvider
      */
-    public function akinLenghtTest(array $test_input, array $expected_output)
+    public function akinLengthTest(array $test_input, array $expected_output)
     {
         $test_output = ExerciseTwo::akin($test_input[0],$test_input[1]);
         $this->assertEquals($test_output[0], $expected_output[0]);
     }
 
     /**
-     * Thest that the length portion of the output to ensure that the found lengths are correct 
-     * for the expected results
+     * Test the output position of string 1 is correct
      * 
      * @test
      * @dataProvider exerciseCaseProvider
@@ -109,8 +108,7 @@ final class ExerciseTwoTest extends TestCase
     }
 
     /**
-     * Thest that the length portion of the output to ensure that the found lengths are correct 
-     * for the expected results
+     * Test the output position of string 2 is correct
      * 
      * @test
      * @dataProvider exerciseCaseProvider

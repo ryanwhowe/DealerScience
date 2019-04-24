@@ -23,11 +23,11 @@ $test_cases = [
 ];
 
 /* Generate the first questions output */
-console_header("Frist Question: Exorcise Two: DNA kinship");
+console_header("First Question: Exorcise Two: DNA kinship");
 foreach($test_cases as $test_case){
     $result = ExorciseTwo::akin($test_case[0], $test_case[1]);
     echo "DNA 1: {$test_case[0]}; DNA 2: {$test_case[1]}" . PHP_EOL;
-    echo "Lenght: {$result[0]}; Position DNA 1: {$result[1]}; Position DNA 2: {$result[2]}" . PHP_EOL . PHP_EOL;
+    echo "Length: {$result[0]}; Position DNA 1: {$result[1]}; Position DNA 2: {$result[2]}" . PHP_EOL . PHP_EOL;
 }
 
 /* Generate the second questions output */

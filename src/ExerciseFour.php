@@ -19,7 +19,7 @@ namespace rhowe\Exercise;
  * use "and" when writing out numbers in compliance with British usage.
  * 
  * Example:
- * 1,2,3,4,5 = 'one' + 'two' + 'three' + 'fout' + 'five' = 'onetwothreefourfive' = 19 letters
+ * 1,2,3,4,5 = 'one' + 'two' + 'three' + 'four' + 'five' = 'onetwothreefourfive' = 19 letters
  * 
  */
 class ExerciseFour {
@@ -41,13 +41,13 @@ class ExerciseFour {
     /**
      * This solution utilizes a linear regression.  This is based off an x,y scatter plot
      * of ending values (starting from 1) and going to 5000.  From this a linear slope of
-     * the plot was taken to genreate a function that represents the values withint .2% of
+     * the plot was taken to generate a function that represents the values within .2% of
      * the actual values and computes in O(1) assuming an error rate of .2% is tollerable.
      */
     public static function linearRegression(int $end): int {
         /* the linear function representing this line is different from 1-100 vs 100 - 1000 vs + 1000 */
         if($end <= 10){
-            return (int) rount(4.15 * $end - 1.75);
+            return (int) round(4.15 * $end - 1.75);
         } elseif($end <= 100){
             return (int) round(8.9764 * $end - 53.477);
         } elseif($end <= 1000){
@@ -63,12 +63,12 @@ class ExerciseFour {
      *  * intervals of 10
      *  * hundred and 'and'
      * 
-     * the number of occurances for each word is calculable and can be used to generate
+     * the number of occurences for each word is calculable and can be used to generate
      * the output for the letter count specifically to 100
      */
     public static function calculation(): int {
         $word_count = [
-            /* single digets are said 9 times per 100 plus 100 times for it's 100 ie three hundred & '''' */
+            /* single digits are said 9 times per 100 plus 100 times for it's 100 ie three hundred & '''' */
             /* one is said 1 additional time with one thousand */
             "one"       => (9 * 10 + 100 + 1),
             "two"       => (9 * 10 + 100),

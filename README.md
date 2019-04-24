@@ -15,4 +15,4 @@ if all the numbers from 1 to 1000 (one thousand) inclusive were written out in w
 Note: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters.  For this exercise you should use "and" when writing out numbers in compliance with British usage.
 
 Example:
-1,2,3,4,5 = 'one' + 'two' + 'three' + 'fout' + 'five' = 'onetwothreefourfive' = 19 letters
+1,2,3,4,5 = 'one' + 'two' + 'three' + 'four' + 'five' = 'onetwothreefourfive' = 19 letters
