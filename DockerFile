@@ -1,0 +1,40 @@
+FROM php:7.4-fpm-alpine
+
+
+# instal the intl php package to the container
+# src https://releasecandidate.dev/posts/2020/how-to-install-php-ext-intl-on-alpine-docker/
+#
+RUN set -xe \
+    && apk add --update \
+        icu \
+    && apk add --no-cache --virtual .php-deps \
+        make \
+    && apk add --no-cache --virtual .build-deps \
+        $PHPIZE_DEPS \
+        zlib-dev \
+        icu-dev \
+        g++ \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install \
+        intl \
+    && docker-php-ext-enable intl \
+    && { find /usr/local/lib -type f -print0 | xargs -0r strip --strip-all -p 2>/dev/null || true; } \
+    && apk del .build-deps \
+    && rm -rf /tmp/* /usr/local/lib/php/doc/* /var/cache/apk/*
+
+# install composer from the official composer image
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+# pull source files into images
+COPY . /var/src
+
+WORKDIR /var/src
+
+# install composer depenencies
+RUN composer install
+
+# run phpUnit
+RUN php ./vendor/bin/phpunit
+#CMD which php
+# run the Answers with output
+CMD php RunMe.php
