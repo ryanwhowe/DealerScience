@@ -35,6 +35,6 @@ RUN composer install
 
 # run phpUnit
 RUN php ./vendor/bin/phpunit
-#CMD which php
+
 # run the Answers with output
 CMD php RunMe.php
